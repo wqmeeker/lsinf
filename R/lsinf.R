@@ -12,27 +12,27 @@
 #' @export
 lsinf <- function(z, censor.type, distribution) {
     if (!is.numeric(z)) 
-        wqm.stop("z must be numeric")
+        stop("z must be numeric")
     if (!is.character(censor.type)) 
-        wqm.stop("censor.type must be character")
+        stop("censor.type must be character")
     if (!is.character(distribution)) 
-        wqm.stop("distribution must be character string")
-    switch(generic.distribution(distribution),
+        stop("distribution must be character string")
+    switch(tolower(distribution),
            weibull = , sev = idist <- 1,
            frechet = , lev = idist <- 2,
            lognormal = , normal = idist <- 3,
            loglogistic = , logistic = idist <- 4, 
-        wqm.stop("Distribution must be sev, lev, normal, or logistic"))
+        stop("Distribution must be sev, lev, normal, or logistic"))
     switch(censor.type,
            uncensored = icode <- 1,
            right = icode <- 2,
            left = icode <- 3, 
-        wqm.stop("censor.type must be uncensored, left, or right"))
+        stop("censor.type must be uncensored, left, or right"))
     nrows <- length(z)
     zout <- .Fortran("slsinf", as.integer(idist), as.integer(icode), as.double(z), as.double(z), 
         f11 = double(nrows), f12 = double(nrows), f22 = double(nrows), as.integer(nrows), 
         ifault = integer(1), irow = integer(1))
     if (zout$ifault > 1) 
-        wqm.warning(paste(ier, "evaluation error in row", irow, sep = "", collapse = ""))
+        warning(paste(ier, "evaluation error in row", irow, sep = "", collapse = ""))
     return(list(f11 = zout$f11, f12 = zout$f12, f22 = zout$f22))
 }
