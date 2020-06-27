@@ -1,6 +1,6 @@
 Package: lsinf
 Title: Censored Data Test Planning Tools
-Version: 0.0.03
+Version: 0.0.04
 Date: 2020-06-27
 Authors@R: 
     person(given = "William Q.",
