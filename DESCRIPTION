@@ -1,13 +1,14 @@
 Package: lsinf
 Title: Censored Data Test Planning Tools
-Version: 0.0.01
+Version: 0.0.03
+Date: 2020-06-27
 Authors@R: 
     person(given = "William Q.",
            family = "Meeker",
            role = c("aut", "cre"),
            email = "wqmeeker@iastate.edu",
            comment = c(ORCID = "0000-0002-5366-0294"))
-Description: Tools for test planning, including computation of the Fisher information matrix.
+Description: Tools for reliability test planning, including computation of the Fisher information matrix for censored data.
 License: GPL-3
 Encoding: UTF-8
 LazyData: true
