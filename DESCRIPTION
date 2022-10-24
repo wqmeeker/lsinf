@@ -1,7 +1,7 @@
 Package: lsinf
 Title: Fisher Information Matrix and Censored Data Test Planning Tools
-Version: 1.0.05
-Date: 2022-01-26
+Version: 1.0.06
+Date: 2022-10-24
 Authors@R: 
     person(given = "William Q.",
            family = "Meeker",
@@ -9,7 +9,7 @@ Authors@R:
            email = "wqmeeker@iastate.edu",
            comment = c(ORCID = "0000-0002-5366-0294"))
 Description: Tools for reliability test planning, including computation of the Fisher information matrix for censored data from (log-)location scale distributions.
-Depends: R (>= 4.1.2)
+Depends: R (>= 4.0.1)
 License: GPL-3
 Encoding: UTF-8
 LazyData: true
